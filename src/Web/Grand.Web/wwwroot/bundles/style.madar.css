@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'bodyFont';
+    src: url(/fonts/SFArabicRounded.ttf);
+}
+
+body {
+    font-family: 'bodyFont';
+}
+
+.category-wrapper {
+    overflow-x: scroll;
+    padding: 1.6rem 0;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+    .category-wrapper ul {
+        list-style-type: none;
+        width: max-content;
+        padding: 0;
+    }
+
+    .category-wrapper li {
+        display: inline-block;
+        padding: 0 .4rem;
+    }
+
+        .category-wrapper li div {
+            width: 9rem;
+            height: 9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F5F5F5;
+        }
+
+        .category-wrapper li a {
+            text-decoration: none;
+        }
+
+    .category-wrapper img {
+        width: 70%;
+        height: auto;
+    }
+
+    .category-wrapper li p {
+        text-align: center;
+        font-size: 1.4rem;
+        color: #000000;
+    }
