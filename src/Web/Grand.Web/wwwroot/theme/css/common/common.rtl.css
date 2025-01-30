@@ -1084,7 +1084,7 @@ input:checked ~ .color-container .color::before {
 .product-box .card-footer * {
     z-index: 2;
 }
-.product-box::before {
+/*.product-box::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -1101,7 +1101,7 @@ input:checked ~ .color-container .color::before {
 .product-box:hover::before {
     border-color: rgba(0,0,0,.2);
     box-shadow: 0 0 10px rgba(0,0,0,.2);
-}
+}*/
 .product-box .product-label {
     position: absolute;
     top: 10px;

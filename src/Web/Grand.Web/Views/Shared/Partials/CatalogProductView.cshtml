@@ -30,23 +30,35 @@
                 <b-card-img-lazy class="hover-img" alt="@Model.SecondPictureModel.AlternateText" src="@Model.SecondPictureModel.ImageUrl"></b-card-img-lazy>
             }
         </a>
-        <a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
+       @*  <a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
             <b-icon icon="search"></b-icon>
             <span>@Loc["Products.QuickView"]</span>
-        </a>
+        </a> *@
         @if (!string.IsNullOrEmpty(Model.Flag))
         {
             <div class="product-label">
                 <div class="badge badge-info">@Model.Flag</div>
             </div>
         }
+        <button class="cardcart" onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', 'false', '@Model.Id');return false;">
+        </button>
     </div>
     <div class="card-body">
+        <div class="btn-group">
         <h3 class="card-title mb-0">
             <a href="@Url.RouteUrl("Product", new { Model.SeName })">
                 @Model.Name
             </a>
         </h3>
+       
+            @if (!Model.ProductPrice.DisableWishlistButton && Model.ProductType == ProductType.SimpleProduct)
+            {
+                <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToWishlist"]" class="favorite" onclick="AxiosCart.addproducttocart_catalog('@addtowishlistlink', '@Model.ShowQty', '@Model.Id');return false;">
+                    @* <b-icon icon="heart"></b-icon>
+                    <span class="sr-only">AddToWishlist</span> *@
+                </button>
+            }
+        </div>
         @if (Model.ShowSku && !string.IsNullOrEmpty(Model.Sku))
         {
             <span class="sku">@Model.Sku</span>
@@ -54,12 +66,12 @@
         <div class="prices-rating">
             @if (Model.ReviewOverviewModel.AllowCustomerReviews)
             {
-                <template>
+              @*   <template>
                     <div class="rating">
                         <b-form-rating id="rating-inline-grid-@Model.Id" aria-label="Rating" class="p-0" variant="warning" no-border size="sm" show-value aria-valuenow="@(Model.ReviewOverviewModel.AvgRating.ToString("0.00", CultureInfo.InvariantCulture))" precision="2" readonly inline value="@Model.ReviewOverviewModel.AvgRating.ToString("0.00", CultureInfo.InvariantCulture)"></b-form-rating>
                         <b-link href="@Url.RouteUrl("Product", new { Model.SeName })">@Model.ReviewOverviewModel.TotalReviews @Loc["Reviews.Overview.Reviews"]</b-link>
                     </div>
-                </template>
+                </template> *@
             }
             @if (Model.ProductType == ProductType.Auction)
             {
@@ -114,10 +126,10 @@
                         @Model.ProductPrice.OldPrice
                     </div>
                 }
-            </div>
+                
         </div>
     </div>
-    <div class="card-footer">
+   @*  <div class="card-footer">
         @if (Model.SpecificationAttributeModels.Any())
         {
             <div class="spec-container">
@@ -276,6 +288,6 @@
                     <b-icon icon="shuffle"></b-icon>
                 </button>
             }
-        </div>
-    </div>
+        </div>*@
+    </div> 
 </article>
