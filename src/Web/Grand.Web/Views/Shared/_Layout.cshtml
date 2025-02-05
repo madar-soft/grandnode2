@@ -31,7 +31,7 @@
     </div>
     <vc:get-coordinate></vc:get-coordinate>
     <partial name="Partials/Header"/>
-    <b-container class="main-container">
+    <b-container class="main-container p-0">
         @await Component.InvokeAsync("Widget", new { widgetZone = "content_before" })
         @if (IsSectionDefined("Breadcrumb"))
         {

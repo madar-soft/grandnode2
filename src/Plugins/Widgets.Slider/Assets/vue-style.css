@@ -8,7 +8,16 @@
 }
 
 #GrandCarousel .carousel-indicators li {
-    background-color: #555;
+    background-color: white;
+    opacity: 1;
+    border-radius: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+#GrandCarousel .carousel-indicators .active {
+    background-color: #FF8711;
+    transform: scale(1.5);
 }
 
 #GrandCarousel .carousel-item .carousel-caption .slideRow {
@@ -108,7 +117,7 @@
 
 @media (max-width: 1199px) {
     #GrandCarousel .carousel-item .slide-content {
-        display: none;
+        /*        display: none;*/
     }
 }
 
@@ -120,7 +129,7 @@
 
 @media (max-width: 767px) {
     #GrandCarousel {
-        display: none;
+        /*        display: none;*/
     }
 }
 
