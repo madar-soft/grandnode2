@@ -31,6 +31,7 @@
         .Sum(x => x.Quantity)
         : 0;
 }
+
 @if (catalogSettings.CompareProductsEnabled)
 {
     <partial name="Partials/SidebarCompareProducts"/>
@@ -39,24 +40,24 @@
 {
     @if (miniShoppingCartEnabled)
     {
-        if (wishlistEnabled)
-        {
-            <partial name="Partials/SidebarWishlist" model="wishlistItems"/>
-        }
+        // if (wishlistEnabled)
+        // {
+        //     <partial name="Partials/SidebarWishlist" model="wishlistItems"/>
+        // }
 
         <partial name="Partials/SidebarShoppingCart" model="shoppingCartItems"/>
     }
     else
     {
-        if (wishlistEnabled)
-        {
-            <li class="nav-item">
-                <a href="@Url.RouteUrl("Wishlist")" class="nav-link">
-                    <b-icon icon="heart" :variant="[darkMode ? 'white' : 'dark']"></b-icon>
-                    <div class="qty-indicator wishlist-qty" ref="wishlistQty">@Loc["Wishlist.HeaderQuantity", wishlistItems]</div>
-                </a>
-            </li>
-        }
+        // if (wishlistEnabled)
+        // {
+        //     <li class="nav-item">
+        //         <a href="@Url.RouteUrl("Wishlist")" class="nav-link">
+        //             <b-icon icon="heart" :variant="[darkMode ? 'white' : 'dark']"></b-icon>
+        //             <div class="qty-indicator wishlist-qty" ref="wishlistQty">@Loc["Wishlist.HeaderQuantity", wishlistItems]</div>
+        //         </a>
+        //     </li>
+        // }
 
         if (shoppingCartEnabled)
         {

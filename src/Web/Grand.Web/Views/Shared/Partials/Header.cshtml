@@ -10,7 +10,7 @@
             <div class="menu-container">
                 <template>
                     <button aria-label="menu-toggler" class="btn menu-toggler" v-b-toggle.sidebar-menu>
-                        <span></span><span></span><span></span>
+                        <span></span>
                     </button>
                     <b-sidebar id="sidebar-menu"
                                backdrop
@@ -28,7 +28,7 @@
             <partial name="Partials/Logo"/>
             <ul class="navbar-nav top-header-items order-3">
                 <template>
-                    <li class="nav-item">
+                    @* <li class="nav-item">
                         <span class="nav-link">
                             <template>
                                 <b-form-checkbox size="lg" v-model="darkMode" name="contrast-button" class="contrast-switch" switch>
@@ -37,9 +37,9 @@
                                 </b-form-checkbox>
                             </template>
                         </span>
-                    </li>
+                    </li> *@
                 </template>
-                <li class="nav-item">
+               @*  <li class="nav-item">
                     <a href="#" target="_self" class="nav-link">
                         <b-icon icon="search" :variant="[darkMode ? 'white' : 'dark']" v-b-modal.search-box></b-icon>
                     </a>
@@ -47,7 +47,7 @@
                 <b-modal id="search-box" ref="search-box" :dark-theme="darkMode" @@shown="vm.$refs.searchBoxInput.focus()"
                          hide-footer hide-header size="xl">
                     @await Component.InvokeAsync("SearchBox")
-                </b-modal>
+                </b-modal> *@
                 <template>
                     <li class="nav-item">
                         <span class="nav-link">
